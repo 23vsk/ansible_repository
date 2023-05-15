@@ -1,0 +1,10 @@
+---
+- name: Deleting directory
+  hosts: all
+  become: yes
+  tasks:
+  - name: Deleting Directory
+    file:
+      path: /home/ansadmin/demodir
+      state: absent
+      recurse: yes

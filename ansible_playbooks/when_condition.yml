@@ -1,0 +1,27 @@
+---
+- name: when test
+  hosts: all
+  become: yes
+  tasks:
+  - name: httpd service
+    yum:
+      name: httpd
+      state: installed
+    when: ansible_os_family == "RedHat"
+  - name: start httpd
+    service:
+      name: httpd
+      state: started
+    when: ansible_os_family == "RedHat"
+  - name: start apache
+    apt:
+      name: httpd
+      state: installed
+    when: ansible_os_family == "Debian"
+  - name: start apache
+    service:
+      name: httpd
+      state: started
+    when: ansible_os_family == "Debian"
+
+

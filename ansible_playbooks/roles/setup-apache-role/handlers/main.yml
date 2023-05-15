@@ -1,0 +1,9 @@
+---
+# handlers file for setup-apache-role
+
+- name: apache started
+  service:
+     name: httpd
+     state: started
+  when: ansible_os_family == "RedHat"
+  ignore_errors: yes

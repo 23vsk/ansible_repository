@@ -1,0 +1,9 @@
+---
+- name: Installing GIT Pacakage
+  hosts: all
+  become: yes
+  tasks:
+  - name: Installing Git
+    yum:
+      name: git
+      state: installed

@@ -1,0 +1,13 @@
+---
+- name: stopping service
+  hosts: all
+  become: yes
+  tasks:
+  - name: stopping service
+    service:
+      name: httpd
+      state: stopped
+  - name: uninstalling service
+    yum:
+      name: httpd
+      state: removed

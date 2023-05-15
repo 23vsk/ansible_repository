@@ -1,0 +1,10 @@
+---
+- name: Create a file
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Create a file
+      file:
+        path: /home/ansadmin/file1.txt
+        state: touch

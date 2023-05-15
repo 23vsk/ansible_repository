@@ -1,0 +1,9 @@
+---
+- name: deleting a file
+  hosts: all
+  become: yes
+  tasks:
+  - name: deleting a file
+    file:
+      path: /home/ansadmin/file1.txt
+      state: absent

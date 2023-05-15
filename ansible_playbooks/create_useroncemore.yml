@@ -1,0 +1,8 @@
+---
+- name: This is the dispaly name
+  hosts: all
+  become: yes
+  tasks:
+  - name : creating user venkat
+    user:
+      name: venkat
